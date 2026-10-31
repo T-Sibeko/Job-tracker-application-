@@ -1,0 +1,99 @@
+body{
+    background: #333333;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.job-form{
+    background: #3d3d3d;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+/* Labels */
+.form-label{
+    color: #d4d4d4;
+    font-size: 0.9rem;
+}
+
+/* Inputs */
+.form-control,
+.form-select{
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #a6a6a6;
+}
+
+/* Placeholder Color */
+.form-control::placeholder{
+    color: #a8a8a8;
+}
+
+/* Focus */
+.form-control:focus,
+.form-select:focus{
+    background: #333333;
+    color: #ffffff;
+    border-color: #36cbd1;
+    box-shadow: 0 0 0 0.2rem rgba(54, 203, 209, 0.2);
+}
+
+/* File Upload */
+input[type="file"]{
+    color: #ffffff;
+}
+
+/* Submit Button */
+.btn-info{
+    background: #2bb1bb;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-info:hover{
+    background: #249aa3;
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+/* Form Title */
+h2{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.submit-btn{
+    background: #36cbd1;
+    color: white;
+    border: none;
+}
+
+.submit-btn:hover{
+    background: #2bb5bb;
+    color: white;
+}
+
+.stat-card{
+    background:#3a3b3f;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.stat-card h2{
+    color:#36cbd1;
+}
+
+.job-card{
+    background:#3a3b3f;
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:20px;
+    border-left:5px solid #36cbd1;
+}
+
+.job-card h4{
+    color:#36cbd1;
+}
