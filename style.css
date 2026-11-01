@@ -393,7 +393,6 @@ font-weight: bold;
     border-radius: 15px;
     padding: 25px;
     margin-bottom: 25px;
-
     color: white;
 }
 
@@ -477,7 +476,7 @@ font-weight: bold;
 }
 
 .public-popup p {
-    color: #718584;
+    color: var(--muted);
 }
 
 .popup-actions {
@@ -532,11 +531,11 @@ font-weight: bold;
 }
 
 .profile-preview {
-    background: #EDF5F4;
+    background: var(--accent);
     width: 145px;
     height: 145px;
     border-radius: 50%;
-    border: 4px solid #D9EEEE;
+    border: 4px solid var(--border);
     object-fit: cover;
 }
 
@@ -544,15 +543,10 @@ font-weight: bold;
     cursor: pointer;
     font-size: 13px;
     font-weight: bold;
-
     padding: 10px 16px;
-
-    background: #D9EEEE;
-    color: #285F60;
-
+    background:var(--accent);
+    color: var(--text);
     border-radius: 8px;
-
-    cursor: pointer;
 }
 
 .profile-picture-area small {
@@ -580,7 +574,7 @@ display: flex;
 
 .form-group label {
 
-    color: #344B49;
+    color: var(--text);
     font-size: 13px;
     font-weight: bold;
 }
@@ -591,10 +585,10 @@ display: flex;
     width: 100%;
     padding: 12px 13px;
     outline: none;
-    border: 1px solid #DDE9E7;
+    border: 1px solid var(--border);
     border-radius: 8px;
-    background: #FFFFFF;
-    color: #263B3A;
+    background: var(--surface);
+    color: var(--text);
 }
 
 .form-group input:focus,
@@ -608,8 +602,7 @@ display: flex;
     resize: vertical;}
 
 .form-group small {
-    color: #718584;
-
+    color: var(--muted);
     font-size: 12px;
 }
 
