@@ -2,12 +2,6 @@ const profileForm = document.getElementById("profileForm");
 const savedProfileImage = document.getElementById("savedProfileImage");
 const profile = JSON.parse(localStorage.getItem("profile") || "null");
 
-if (profile) {
-    ["firstName", "lastName", "email", "phone", "address"].forEach(function(field) {
-        document.getElementById(field).value = profile[field] || "";
-    });
-}
-
 function showSavedImageName(imageName) {
     savedProfileImage.textContent = imageName && imageName !== "No Image"
         ? `Previously selected file: ${imageName} (select it again to upload the file)`
@@ -43,7 +37,12 @@ profileForm.addEventListener("submit", function(event) {
     };
 
     localStorage.setItem("profile", JSON.stringify(savedProfile));
+
     showSavedImageName(savedProfile.profileImage);
 
     alert("Profile Saved Successfully!");
+
+    profileForm.reset();
+
+    savedProfileImage.textContent = "";
 });
