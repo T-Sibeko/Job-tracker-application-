@@ -305,10 +305,83 @@
 
 </section>
 
-<!--Add Apication Placeholder-->
+<!--Add Apication -->
 <section class="page-section" id="add-application">
-    <h1>Add Apication</h1>
+
+    <h1>My Job Applications</h1>
+
+    <div class="job-form p-4">
+
+        <h2 class="mb-4">Add Job</h2>
+
+        <form id="jobForm"> <div class="row g-3">
+
+<!-- Position -->
+    <div class="col-md-4">
+    <label class="form-label">Position</label>
+    <input type="text" class="form-control" id="position">
+    </div>
+
+<!-- Company -->
+    <div class="col-md-4">
+    <label class="form-label">Company</label>
+    <input type="text" class="form-control" id="company">
+    </div>
+
+<!-- Location -->
+<div class="col-md-4">
+    <label class="form-label">Job Location</label>
+   <input type="text" class="form-control" id="job-location">
+</div>
+
+<!-- Status -->
+    <div class="col-md-4">
+    <label class="form-label">Job Status</label>
+    <select class="form-select" id="status">
+        <option>Applied</option>
+        <option>Interview</option>
+        <option>Offer</option>
+        <option>Rejected</option>
+    </select>
+    </div>
+
+<!-- Type -->
+    <div class="col-md-4">
+        <label class="form-label">Job Type</label>
+            <select class="form-select" id="type">
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Remote</option>
+                    </select>
+                </div>
+
+<!-- Application Date -->
+        <div class="col-md-4">
+                <label class="form-label">Application Date</label>
+                <input type="date" class="form-control" id="applicationDate">
+                </div>
+
+<!-- Upload CV -->
+    <div class="col-md-8">
+        <label class="form-label">Upload CV</label>
+                <input type="file" class="form-control" id="resume" accept=".pdf,.doc,.docx">
+                </div>
+
+<!-- Submit -->
+    <div class="col-md-4 d-flex align-items-end">
+        <button type="submit" class="btn submit-btn w-100">Add Job</button>
+            </div>
+
+        </div>
+    </form>
+
+    </div>
+
+    <!-- Application cards -->
+    <div class="row mt-4" id="jobList"></div>
+
 </section>
+
 
 <!--Jobs of interest-->
 <section class="page-section" id="jobs-of-interest">
