@@ -789,7 +789,7 @@ display: flex;
 }
 
 .sidenavbar.collapsed.sidebar-toggle.toggle-label{
-    display: none;
+    display: none !important;
 }
 
 .sidenavbar.collapsed .navbar-contents button 

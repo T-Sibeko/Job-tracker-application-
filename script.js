@@ -403,7 +403,7 @@ jobForm.addEventListener("submit", function(event) {
 
     localStorage.setItem("jobs", JSON.stringify(jobs));
 
-    document.dispatchEvent(newEvent("jobsUpdated"));
+    document.dispatchEvent(new Event("jobsUpdated"));
 
     renderJobs();
 
@@ -449,7 +449,6 @@ renderJobs();
             jobs.filter(job => job.status === status).length
         );
 
-        document.addEventListener("jobsUpdated",updateDashboard);
 
         const chartCanvas = document.getElementById("jobChart");
 
@@ -464,9 +463,9 @@ renderJobs();
 
         const chartColours = [
             primaryColour,
-            "#E6B85C",
-            "#3C956B",
-            "#C85D68"
+            "#D9A441",
+            "#AD7181",
+            "#765078"
         ];
 
         // Prevent duplicates
@@ -545,6 +544,8 @@ jobChart = new Chart(chartContext, {type: "bar",
         });
 
     }
+
+    document.addEventListener("jobsUpdated",updateDashboard);
 
     // Initial dashboard display
     updateDashboard();
