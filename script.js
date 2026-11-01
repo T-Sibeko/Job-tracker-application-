@@ -79,12 +79,10 @@ sidebarToggle.addEventListener("click", function()
 {sidebar.classList.toggle("collapsed");
     const isCollapsed = sidebar.classList.contains("collapsed");
 
-    sidebarToggle.setAttribute(
-        "aria-expanded",!isCollapsed);
+    sidebarToggle.setAttribute("aria-expanded",!isCollapsed);
 
     sidebarToggle.setAttribute(
-        "aria-label",
-        isCollapsed ? "Expand navigation" : "Collapse navigation");
+        "aria-label",isCollapsed ? "Expand navigation" : "Collapse navigation");
 
 
 });
