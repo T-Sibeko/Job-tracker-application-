@@ -361,8 +361,16 @@ font-weight: bold;
     color:var(--text);
 }
 
-.resume-page p {
-    color:var(--muted);
+body[data-theme="teal"] .resume-page p{
+    color: black;
+}
+
+body[data-theme="pink"] .resume-page p{
+    color: black;
+}
+
+body[data-theme="purple"] .resume-page p{
+    color: var(--accent);
 }
 
 .resume-page h1,
