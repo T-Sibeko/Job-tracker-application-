@@ -419,3 +419,149 @@ jobForm.addEventListener("submit", function(event) {
 });
 
 renderJobs();
+
+/* Dashboard*/
+
+(function () {
+
+    let jobChart = null;
+
+    function updateDashboard() {
+
+        const dashboard = document.getElementById("dashboard");
+
+        if (!dashboard) return;
+
+        // Retrieve applications from Add Application
+        const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+        // Update statistic cards
+        document.getElementById("totalJobs").textContent = jobs.length;
+
+        document.getElementById("interviewJobs").textContent =
+            jobs.filter(job => job.status === "Interview").length;
+
+        document.getElementById("offerJobs").textContent =
+            jobs.filter(job => job.status === "Offer").length;
+
+        document.getElementById("rejectedJobs").textContent =
+            jobs.filter(job => job.status === "Rejected").length;
+
+        // Prepare chart data
+        const statuses = ["Applied", "Interview", "Offer", "Rejected"];
+
+        const statusCounts = statuses.map(status =>
+            jobs.filter(job => job.status === status).length
+        );
+
+        const chartCanvas = document.getElementById("jobChart");
+
+        if (!chartCanvas || typeof Chart === "undefined") return;
+
+        // match the current theme colours
+        const styles = getComputedStyle(document.body);
+
+        const textColour = styles.getPropertyValue("--text").trim();
+        const primaryColour = styles.getPropertyValue("--primary").trim();
+        const mutedColour = styles.getPropertyValue("--muted").trim();
+
+        const chartColours = [
+            primaryColour,
+            "#E6B85C",
+            "#3C956B",
+            "#C85D68"
+        ];
+
+        // Prevent duplicates
+        if (jobChart) {
+
+            jobChart.data.datasets[0].data = statusCounts;
+            jobChart.data.datasets[0].backgroundColor = chartColours;
+
+            jobChart.options.plugins.legend.labels.color = textColour;
+            jobChart.options.scales.x.ticks.color = textColour;
+            jobChart.options.scales.y.ticks.color = textColour;
+            jobChart.options.scales.y.grid.color = mutedColour;
+
+            jobChart.update();
+
+            return;
+        }
+
+// Chart creation
+const chartContext = chartCanvas.getContext("2d");
+
+jobChart = new Chart(chartContext, {type: "bar",
+
+    data: {labels: statuses,
+
+        datasets: [{
+                label: "Applications",
+                data: statusCounts,
+                backgroundColor: chartColours,
+                borderRadius: 6
+                }]
+            },
+
+            options: {
+
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: textColour
+                        }
+                    }
+                },
+
+                scales: {
+
+                    y: {
+                        beginAtZero: true,
+
+                        ticks: {
+                            precision: 0,
+                            color: textColour
+                        },
+
+                        grid: {
+                            color: mutedColour
+                        }
+                    },
+
+                    x: {
+                        ticks: {
+                            color: textColour
+                        },
+
+                        grid: {
+                            display: false
+                        }
+                    }
+
+                }
+
+            }
+
+        });
+
+    }
+
+    // Initial dashboard display
+    updateDashboard();
+
+    // Refresh when Dashboard is selected
+    document.querySelectorAll(
+        '.navbar-contents button[data-page="dashboard"]'
+    ).forEach(button => {
+        button.addEventListener("click", updateDashboard);
+    });
+
+    // Refresh chart colours to match theme
+    document.querySelectorAll('input[name="theme"]').forEach(input => {
+        input.addEventListener("change", updateDashboard);
+    });
+
+})();

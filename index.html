@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script><script src="script.js" defer></script>
+
     <script src="script.js" defer></script>
 
 
@@ -80,10 +82,48 @@
 
 <main class="main-content">
 
-<!--Dashboard Placeholder-->
+<!--Dashboard-->
 <section class="page-section active" id="dashboard">
-    <h1>Dashboard code to be loaded</h1>
+
+    <h1 class="dashboard-title">Job Dashboard</h1>
+
+    <!-- Application statistics -->
+    <section class="dashboard-stats" aria-label="Job application statistics">
+
+    <div class="stat-card">
+        <h2 id="totalJobs">0</h2>
+        <p>Total Jobs</p>
+        </div>
+
+<div class="stat-card">
+        h2 id="interviewJobs">0</h2>
+        <p>Interviews</p>
+        </div>
+
+<div class="stat-card">
+        h2 id="offerJobs">0</h2>
+        <p>Offers</p>
+        </div>
+
+<div class="stat-card"><h2 id="rejectedJobs">0</h2>
+ <p>Rejected</p>
+        </div>
+
+    </section>
+
+    <!-- Chart -->
+    <section class="dashboard-chart">
+
+        <h2>Job Status Overview</h2>
+
+<div class="chart-container">
+    <canvas id="jobChart" aria-label="Applications by job status"role="img"></canvas>
+        </div>
+
+    </section>
+
 </section>
+
 
 <!--Online Resume-->
 
