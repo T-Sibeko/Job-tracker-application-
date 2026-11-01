@@ -753,16 +753,6 @@ display: flex;
     align-items: center;
 }
 
-.toggle-label {
-    font-size: 13px;
-    white-space: nowrap;
-    font-weight: 500;
-}
-
-
-
-
-
 
 
 
@@ -780,7 +770,7 @@ display: flex;
 .sidenavbar.collapsed .Our-icon,
 .sidenavbar.collapsed .Navbar small,
 .sidenavbar.collapsed .nav-label {
-    display: none;
+    display:flex;
 }
 
 .sidenavbar.collapsed .Navbar {
@@ -794,9 +784,6 @@ display: flex;
     width: 100%;
 }
 
-.sidenavbar.collapsed.toggle-label{
-    display: none !important;
-}
 
 .sidenavbar.collapsed .navbar-contents button 
 {
