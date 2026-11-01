@@ -820,6 +820,229 @@ display: flex;
 
 }
 
+#add-application .p-4 {
+    padding: 24px;
+}
+
+#add-application .mb-4 {
+    margin-bottom: 20px;
+}
+
+#add-application .mt-4 {
+    margin-top: 24px;
+}
+
+#add-application .mb-3 {
+    margin-bottom: 16px;
+}
+
+#add-application .g-3 {
+    row-gap: 8px;
+}
+
+
+/* Add application*/
+
+/* Main form */
+#add-application .job-form {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Form heading */
+#add-application .job-form h2 {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* Labels */
+#add-application .form-label {
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Inputs and dropdowns */
+#add-application .form-control,
+#add-application .form-select {
+    width: 100%;
+    min-width: 0;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* Placeholder */
+#add-application .form-control::placeholder {
+    color: var(--muted);
+}
+
+/* Input focus */
+#add-application .form-control:focus,
+#add-application .form-select:focus {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--accent);
+    outline: none;
+}
+
+/* File upload */
+#add-application input[type="file"] {
+    color: var(--text);
+}
+
+/* Submit button */
+#add-application .submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 12px;
+    transition: 0.3s ease;
+}
+
+#add-application .submit-btn:hover {
+    background: var(--primary-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Job cards */
+#add-application .job-card {
+    height: 100%;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#add-application .job-card h4 {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#add-application .job-card p {
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+/* Status badges */
+#add-application .badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+#add-application .text-bg-primary {
+    background: var(--primary);
+    color: white;
+}
+
+#add-application .text-bg-warning {
+    background: #E6B85C;
+    color: #30240D;
+}
+
+#add-application .text-bg-success {
+    background: #3C956B;
+    color: white;
+}
+
+#add-application .text-bg-danger {
+    background: #C85D68;
+    color: white;
+}
+
+#add-application .text-bg-secondary {
+    background: var(--muted);
+    color: white}
+
+/* Grid layout */
+
+#add-application .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+#add-application .row > [class*="col-"] {
+    padding-left: 8px;
+    padding-right: 8px;
+    min-width: 0;
+    margin-bottom: 16px;
+}
+
+
+#add-application .col-md-4 {
+    width: 33.333333%;
+}
+
+#add-application .col-md-8 {
+    width: 66.666667%;
+}
+
+/* Submit button */
+#add-application .d-flex {
+    display: flex;
+}
+
+#add-application .align-items-end {
+    align-items: flex-end;
+}
+
+#add-application .w-100 {
+    width: 100%;
+}
+
+/* Medium screens layout*/
+@media (max-width: 850px) {
+
+    #add-application .job-form {
+        padding: 22px;
+    }
+
+    #add-application .col-md-4,
+    #add-application .col-md-8 {
+        width: 50%;
+    }
+
+}
+
+/* Mobile screens layout*/
+@media (max-width: 600px) {
+
+    #add-application .job-form {
+        padding: 16px;
+    }
+
+    #add-application .col-md-4,
+    #add-application .col-md-8 {
+        width: 100%;
+    }
+
+    #add-application .job-card {
+        padding: 16px;
+    }
+
+}
+
+
+
 
 
 @media (max-width: 600px) {
