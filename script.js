@@ -146,7 +146,7 @@ profilePicture.addEventListener("change", function() {
 /* Uploading of supporting documents */
 
 /*Docs upload */
-const cvUpload = document.getElementById("cv-upload");
+const cvUpload = document.getElementById("job-resume-file");
 
 /* Display uploaded file name*/
 const cvFileName = document.getElementById("cv-file-name");

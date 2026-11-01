@@ -355,57 +355,41 @@ font-weight: bold;
 }
 
 
-/* Resume theme-Not subject to customization*/
+/* Resume customization*/
 
 .resume-page {
-    color: #263B3A;
-}
-
-.page-heading {
-    margin-bottom: 22px;
+    color:var(--text);
 }
 
 .resume-page p {
-    color: #718584;
+    color:var(--muted);
 }
 
 .resume-page h1,
 .resume-page h2 {
-    color: #285F60;
+    color:var(--text);
 }
 
 .resume-page .content-card {
-    background: #FFFFFF;
-    border-color: #DDE9E7;
+    background: var(--surface);
+    border-color:var(--border);
+    color: var(--text);
 }
 
 .resume-page .content-card h2 {
-    color: #326B6A;
+    color: var(--primary);
 }
 
-.eyebrow {
-    color: var(--primary) !important;
-
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
 
 .resume-page .eyebrow {
-    color: #478C8B !important;
+    color:var(--primary) !important;
 }
+
 
 
 /* Resume guide*/
 
 .recruiter-banner {
-    background: linear-gradient(
-        120deg,
-        #244F50,
-        #478C8B
-    );
-
     border-radius: 15px;
     padding: 25px;
     margin-bottom: 25px;
@@ -453,7 +437,6 @@ font-weight: bold;
     cursor: pointer;
     font-weight: bold;
     background: white;
-    color: #285F60;
     border: none;
     border-radius: 8px;
     padding: 11px 18px;
@@ -480,7 +463,6 @@ font-weight: bold;
 }
 
 .public-popup {
-    color: #263B3A;
     width: 100%;
     max-width: 400px;
     padding: 30px;
@@ -491,7 +473,6 @@ font-weight: bold;
 }
 
 .public-popup h2 {
-    color: #285F60;
     margin-bottom: 12px;
 }
 
@@ -504,6 +485,30 @@ font-weight: bold;
     gap: 12px;
     display: flex;
     margin-top: 25px;
+}
+
+.resume-page.form-group input,
+.resume-page.form-group textarea,
+.resume-page.form-group select{
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.resume-page.form-group input::placeholder,
+.resume-page.form-group textarea::placeholder{
+    color: var(--muted);
+
+}
+
+.resume-page .purple-preview{
+    border-color: var(--primary);
+    color: white;
+}
+
+.resume-page .secondary-button{
+    background: var(--accent);
+    color: var(--text);
 }
 
 /*User profile info*/
@@ -786,9 +791,10 @@ display: flex;
 {
     align-self: center;
     justify-content: center;
+    width: 100%;
 }
 
-.sidenavbar.collapsed.sidebar-toggle.toggle-label{
+.sidenavbar.collapsed.toggle-label{
     display: none !important;
 }
 
