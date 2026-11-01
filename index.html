@@ -10,9 +10,11 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script><script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer>
 
-    <script src="script.js" defer></script>
+    </script><script src="script.js" defer></script>
+
+    
 
 
 
@@ -32,7 +34,8 @@
         </a>
 
         <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-label="Collapse navigation"
-        aria-expanded="true"><i class="bi bi-list"></i>
+        aria-expanded="true">
+        <i class="bi bi-list"></i><span class="toggle-label">Collapse Navigation</span>
 
         </button>
 
@@ -91,23 +94,24 @@
     <section class="dashboard-stats" aria-label="Job application statistics">
 
     <div class="stat-card">
-        <h2 id="totalJobs">0</h2>
-        <p>Total Jobs</p>
-        </div>
+    <h2 id="totalJobs">0</h2>
+    <p>Total Jobs</p>
+</div>
 
 <div class="stat-card">
-        h2 id="interviewJobs">0</h2>
-        <p>Interviews</p>
-        </div>
+    <h2 id="interviewJobs">0</h2>
+    <p>Interviews</p>
+</div>
 
 <div class="stat-card">
-        h2 id="offerJobs">0</h2>
-        <p>Offers</p>
-        </div>
+    <h2 id="offerJobs">0</h2>
+    <p>Offers</p>
+</div>
 
-<div class="stat-card"><h2 id="rejectedJobs">0</h2>
- <p>Rejected</p>
-        </div>
+<div class="stat-card">
+    <h2 id="rejectedJobs">0</h2>
+    <p>Rejected</p>
+</div>
 
     </section>
 
@@ -149,7 +153,7 @@
 
     
 
-    <!-- Logos -->
+    <!-- Logos --> 
     <div class="banner-logos"> 
 
         <div class="banner-logo" title="LinkedIn">
@@ -339,7 +343,7 @@
     </button>
  </div>
 
- <p id="resume-message">class="feedback-message"</p>
+ <p id="resume-message" class="feedback-message" role="status" aria-live="polite"></p>
 
     </form>
 

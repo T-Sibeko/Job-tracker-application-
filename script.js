@@ -86,7 +86,6 @@ sidebarToggle.addEventListener("click", function()
         "aria-label",
         isCollapsed ? "Expand navigation" : "Collapse navigation");
 
-    sidebarToggle.innerHTML = isCollapsed? '<i class="bi bi-list"></i>': '<i class="bi bi-list"></i>';
 
 });
 
@@ -175,17 +174,13 @@ const resumeMessage = document.getElementById("resume-message");
 
 const resumeForm = document.getElementById("resume-form");
 
-
+/*Preserve data*/
 
 resumeForm.addEventListener("submit", function(event) 
-{
+{ event.preventDefault();
 
-    //Preserve data*/
-    event.preventDefault();
-
-
-    /*Confirmation notification*/
     resumeMessage.textContent ="Your resume details have been updated successfully.";
+    resumeMessage.classList.add("success-message");
 
 });
 
@@ -410,6 +405,8 @@ jobForm.addEventListener("submit", function(event) {
 
     localStorage.setItem("jobs", JSON.stringify(jobs));
 
+    document.dispatchEvent(newEvent("jobsUpdated"));
+
     renderJobs();
 
     jobForm.reset();
@@ -453,6 +450,8 @@ renderJobs();
         const statusCounts = statuses.map(status =>
             jobs.filter(job => job.status === status).length
         );
+
+        document.addEventListener("jobsUpdated",updateDashboard);
 
         const chartCanvas = document.getElementById("jobChart");
 
