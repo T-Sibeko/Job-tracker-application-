@@ -1178,4 +1178,33 @@ display: flex;
         width: 100%;
     }
 
+    #dashboard .dashboard-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#dashboard .stat-card {
+    padding: 18px 10px;
+}
+
+#dashboard .stat-card h2 {
+    font-size: 24px;
+}
+
+#dashboard .stat-card p {
+    font-size: 12px;
+}
+
+#dashboard .dashboard-chart {
+    padding: 16px;
+}
+
+#dashboard .dashboard-chart h2 {
+    font-size: 18px;
+}
+
+#dashboard .chart-container {
+    height: 260px;
+}
+
 }
