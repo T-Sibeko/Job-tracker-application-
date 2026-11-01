@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Career Portal</title>
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+
+
+</head>
+
+<body>
+
+
+<div class="app-layout">
+
+    <!--Side Navbar-->
+    <aside class="sidenavbar">
+
+        <a href="#" class="Navbar" aria-label="Home">
+            <span class="Our-icon">Career Portal</span>
+            <small>Job search Simplified</small>
+        </a>
+
+        <button type="button" id="sidebar-toggle" class="sidebar-toggle" aria-label="Collapse navigation"
+        aria-expanded="true"><i class="bi bi-list"></i>
+
+        </button>
+
+    <nav class="navbar-contents" aria-label="Navigation">
+
+    <button class="dashboard-link active" data-page="dashboard">
+
+        <span class="nav-icon"><i class="bi bi-speedometer2"></i></span>
+        <span class="nav-label">Dashboard</span>
+
+    </button>
+
+    <button class="resume-link" data-page="resume">
+
+        <span class="nav-icon"><i class="bi bi-file-earmark-person"></i></span>
+        <span class="nav-label">Online Resume</span>
+
+    </button>
+
+    <button class="add-application-link" data-page="add-application">
+
+        <span class="nav-icon"><i class="bi bi-plus-square"></i></span>
+        <span class="nav-label">Add Application</span>
+
+    </button>
+
+    <button class="jobs-of-interest-link" data-page="jobs-of-interest">
+
+        <span class="nav-icon"><i class="bi bi-briefcase"></i></span>
+        <span class="nav-label">Jobs of Interest</span>
+
+    </button>
+
+    <button class="settings-link" data-page="settings">
+
+        <span class="nav-icon"><i class="bi bi-gear"></i></span>
+        <span class="nav-label">Settings</span>
+
+    </button>
+
+
+
+        </nav>
+</aside>
+
+<!--Webpage content-->
+
+<main class="main-content">
+
+<!--Dashboard Placeholder-->
+<section class="page-section active" id="dashboard">
+    <h1>Dashboard code to be loaded</h1>
+</section>
+
+<!--Online Resume-->
+
+<section class="page-section resume-page" id="resume">
+    <div class="page-heading">
+        <div>
+            <p class="eyebrow">Your Professional Profile</p>
+            <p>Complete your profile and make it easieror recruiters to discover your expertise.</p>
+        </div>
+    </div>
+
+    <div class="recruiter-banner">
+
+    <div class="banner-copy">
+
+        <p>
+            This page is designed to showcase your professional profile to recruiters directly from here.
+
+            You can do this by making your profile public- Kindly note that only this section will be visible
+            to the public and the remaining sections of the portal will remain private.
+        </p>
+
+
+    
+
+    <!-- Logos -->
+    <div class="banner-logos"> 
+
+        <div class="banner-logo" title="LinkedIn">
+            <img src="LK.png" alt="LinkedIn">
+        </div>
+
+        <div class="banner-logo" title="GitHub">
+            <img src="GitHub.png" alt="GitHub">
+        </div>
+
+        <div class="banner-logo" title="TechCareers Group">
+            <img src="TC.png" alt="TechCareers">
+        </div>
+
+        <div class="banner-logo" title="Workforce Staffing">
+            <img src="WS.png" alt="Workforce Staffing">
+        </div>
+
+    </div>
+
+     <button type="button" class="public-profile-button" id="public-profile-button">Make Profile Public
+</button>
+    </div>
+</div>
+
+
+<!-- Consent Popup -->
+
+<div class="popup-overlay" id="public-profile-popup" hidden>
+
+    <div class="public-popup">
+
+        <h2>Make Profile Public?</h2>
+
+        <p>
+
+            Would you like to make your professional profile available to recruiters?
+
+        </p>
+
+        <div class="popup-actions">
+
+            <button type="button" class="primary-button" id="public-yes">Yes </button>
+
+            <button type="button" class="secondary-button" id="public-no">No </button>
+
+
+
+        </div>
+    </div>
+</div>
+
+            
+
+            
+
+            
+
+
+    <form id="resume-form">
+        <div class="content-card">
+            <div class="section-title">
+                <div><p>About Me</p>
+                </div>
+            </div>
+
+    <div class="profile-layout">
+        <div class="profile-picture-area">
+            <img id="profile-preview" src="" alt="" class="profile-preview">
+
+            <label for="profile-picture" class="upload-button">Upload picture</label>
+            <input type="file" id="profile-picture" accept="image/*" hidden>
+
+            <small>Choose a professional profile photo.</small>
+
+        </div>
+
+        <div class="form-fields">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+
+                <input type="text" id="full-name" placeholder="Enter your name">
+
+            </div>
+
+            <div class="form-group">
+                <label for="professional-title">Professional Title</label>
+                <input type="text" id="professional-title" 
+                placeholder="e.g.Junior Data Analyst">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input type="email" id="email" placeholder="you@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Contact Number</label>
+                <input type="tel" id="phone"
+                placeholder="Enter your number">
+
+            </div>
+
+            <div class="form-group full-width">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="City, Country">
+            </div>
+
+        </div>
+
+    </div>
+
+ </div>
+
+ <!--User details-->
+
+ <div class="content-card">
+    <h2>Online resume</h2>
+    <p>Give recruiters a short description from previos role, responsibilities and achievements</p>
+
+    <div class="form-group">
+        <label for="summary">Professional Summary</label>
+        <textarea id="summary" rows="7"
+        placeholder="Write a professional summary..."></textarea>
+
+    </div>
+ </div>
+
+ <div class="content-card">
+    <h2>Education</h2>
+    <p>Add your academic background </p>
+
+    <div class="form-group">
+        <label for="qualifications">Qualifications</label>
+        <input type="text" id="qualifications" 
+        placeholder="e.g. Diploma in Information Technology">
+    </div>
+
+    <div class="form-group">
+        <label for="institution">Institution</label>
+        <input type="text" id="institution" placeholder="Institution name">
+    </div>
+
+    <div class="form-group">
+        <label for="education-year">Year</label>
+        <input type="text" id="education-year" placeholder="e.g. 2025">
+    </div>
+ </div>
+
+ <div class="content-card">
+    <h2>Skills</h2>
+
+    <div class="form-group">
+        <label for="skills">Your skills</label>
+        <textarea id="skills" row="4" placeholder="e.g Excel, Comunication"></textarea>
+
+    </div>
+ </div>
+
+ <!--Supporting docs and links-->
+ <div class="content-card">
+    <p>Add supporting documents and links that help recuiters learn more about your work</p>
+
+<div class="form-group">
+    <label for="cv-upload">upload your addition documents</label>
+    <input type="file" id="cv-upload" accept=".pdf,.doc,.docx">
+    <small id="cv-file-name">There is currently no documents added</small>
+</div>
+
+<div class="form-group">
+    <label for="other-link">Links to yor profile(eg. GitHub, Linkedin)</label>
+    <input type="url" id="other-link"
+    placeholder="Achievements, projects, etc.">
+</div>
+
+ </div>
+
+ <!--custom resume templates-->
+ <div class="resume-actions">
+    <button type="button" class="secondary-button" id="canva-button">
+        Create a custom CV on Canva
+    </button>
+
+    <button type="submit" class="primary-button">
+        Submit resume details
+    </button>
+ </div>
+
+ <p id="resume-message">class="feedback-message"</p>
+
+    </form>
+
+</section>
+
+<!--Add Apication Placeholder-->
+<section class="page-section" id="add-application">
+    <h1>Add Apication</h1>
+</section>
+
+<!--Jobs of interest-->
+<section class="page-section" id="jobs-of-interest">
+    <h1>Stay up to date with job listing alerts</h1>
+
+    <p>Your Next Opportunity brought to you</p>
+
+    <form id="jobSearchForm">
+
+        <label for="jobCategory">Job Category</label>
+
+        <select id="jobCategory" required>
+            <option value="">Select a field</option>
+            <option value="it-&-telecommunications">Information Technology</option>
+            <option value="accounting-auditing">Accounting and Finance</option>
+            <option value="transport-logistics-freight">Transport and Logistics</option>
+            <option value="human-resources-recruitment">Human Resources</option>
+            <option value="engineering-technical-production-manufacturing">Engineering</option>
+        </select>
+
+        <label for="jobLocation">Preferred Location</label>
+
+        <select id="jobLocation" required>
+
+            <option value="">Select location</option>
+            <option value="johannesburg">Johannesburg</option>
+            <option value="pretoria">Pretoria</option>
+            <option value="cape-town">Cape Town</option>
+            <option value="durban">Durban</option>
+            <option value="gauteng">Gauteng</option>
+            <option value="western-cape">Western Cape</option>
+        </select>
+
+        <button type="submit">Search Jobs</button>
+
+    </form>
+
+    <div class="jobs-image">
+        <img src="jobs-of-interest.png" alt="explore jobs">
+    </div>
+
+
+
+</section>
+
+
+
+
+<!--Settings-->
+
+<section class="page-section" id="settings">
+    <p class="eyebrow">Pesonalize your experience</p>
+    <h1>Settings</h1>
+
+
+    <!--Theme-->
+    <div class="content-card">
+        <h2>Choose one of the thre color theme</h2>
+        <div class="theme-options">
+            <label class="theme-option">
+                <input type="radio" name="theme" value="teal" checked>
+
+                <span class="theme-preview teal-preview"></span>
+
+                <span>
+                    <strong>Pastel Teal</strong>
+                </span>
+            </label>
+
+
+                <label class="theme-option">
+                <input type="radio" name="theme" value="pink">
+
+                <span class="theme-preview pink-preview"></span>
+
+                <span>
+                    <strong>Dusty Pink</strong>
+                </span>
+            </label>
+
+                <label class="theme-option">
+                <input type="radio" name="theme" value="purple">
+
+                <span class="theme-preview purple-preview"></span>
+
+                <span>
+                    <strong>Purple</strong>
+                </span>
+            </label>
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <!--Fonts-->
+    <div class="content-card">
+        <p>Choose how text apears throughout the portal</p>
+
+        <div class="form-group">
+            <label for="font-choice">Select Font</label>
+
+            <select id="font-choice">
+                <option value="morden">Morden-Arial</option>
+                <option value="classic">Classic-Georgia</option>
+            </select>
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+</div>
+
+</body>
+</html>
