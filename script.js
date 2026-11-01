@@ -115,7 +115,7 @@ showPage("dashboard");
 const profilePicture = document.getElementById("profile-picture");
 
 /*Preview*/
-const profilePreview = document.getElementById("profile-preview");
+const resumeProfilePreview = document.getElementById("resume-profile-preview");
 
 
 /*Picture selection*/
@@ -137,7 +137,7 @@ profilePicture.addEventListener("change", function() {
     const imageURL = URL.createObjectURL(selectedFile);
 
     /* Display*/
-    profilePreview.src = imageURL;
+    resumeProfilePreview.src = imageURL;
 
 });
 
@@ -384,7 +384,7 @@ jobForm.addEventListener("submit", function(event) {
         return;
     }
 
-    const resume = document.getElementById("resume").files[0];
+    const resume = document.getElementById("job-resume-file").files[0];
 
     jobs.push({
 
@@ -577,7 +577,7 @@ const profileForm = document.getElementById("profileForm");
 
 const savedProfileImage = document.getElementById("savedProfileImage");
 
-const profilePreview = document.getElementById("profile-preview");
+const topProfilePreview = document.getElementById("top-profile-preview");
 
 const profileImageInput = document.getElementById("profileImage");
 
@@ -615,7 +615,7 @@ Object.keys(profileFields).forEach(function(field) { profileFields[field].value 
 
     });
 
-if (profileImageData) { profilePreview.src = profileImageData;
+if (profileImageData) { topProfilePreview.src = profileImageData;
     savedProfileImage.textContent = "Previously saved profile picture.";} 
     else { savedProfileImage.textContent = profile.profileImage && profile.profileImage !== "No Image"? "Previously selected: " + profile.profileImage : "";
 
@@ -658,7 +658,7 @@ profileImageInput.addEventListener("change", function() {
     reader.onload = function(event) {
 
         profileImageData = event.target.result;
-        profilePreview.src = profileImageData;
+        topProfilePreview.src = profileImageData;
         savedProfileImage.textContent = selectedFile.name;
 
     };
