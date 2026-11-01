@@ -25,6 +25,100 @@
 
 <div class="app-layout">
 
+<!-- Profile button -->
+<button
+    type="button" id="profile-toggle" class="floating-profile-button" aria-label="Open My Profile" aria-expanded="false">
+
+    <i class="bi bi-person-circle"></i><span>My Profile</span>
+
+</button>
+
+
+<!-- Details -->
+<section id="profile-panel" class="floating-profile-panel" aria-labelledby="profile-heading" hidden>
+
+    <div class="profile-panel-header"><div>
+
+            <p class="eyebrow">NOTHA ACCOUNT</p>
+            <h2 id="profile-heading">My Profile</h2>
+        </div>
+
+<button type="button" id="profile-close" class="profile-close-button" aria-label="Close profile"> <i class="bi bi-x-lg"></i>
+
+        </button>
+
+    </div>
+
+
+<form id="profileForm">
+
+    <div class="profile-image-section">
+
+    <img id="profile-preview" src="" alt="Your profile picture">
+
+    <label for="profileImage" class="upload-button"><i class="bi bi-camera"></i> Upload Profile Picture </label>
+
+    <input type="file" id="profileImage" accept="image/*" hidden>
+
+        <small id="savedProfileImage"></small>
+
+        </div>
+
+
+<div class="profile-form-grid">
+
+    <div class="form-group">
+        <label for="profileFirstName">First Name</label>
+            <input type="text" id="profileFirstName" placeholder="Enter first name">
+            </div>
+
+    <div class="form-group"> <label for="profileLastName">Last Name</label>
+        <input type="text" id="profileLastName" placeholder="Enter last name">
+            </div>
+
+    <div class="form-group">
+                <label for="profileEmail">Email</label>
+                <input type="email" id="profileEmail" placeholder="Enter email address" required>
+            </div>
+
+    <div class="form-group">
+        <label for="profilePhone">Phone Number</label>
+            <input type="tel" id="profilePhone" placeholder="Enter phone number">
+            </div>
+
+    <div class="form-group profile-full-width">
+        <label for="profileAddress">Address</label>
+            <textarea id="profileAddress" rows="2" placeholder="Enter your address"></textarea>
+            </div>
+
+<div class="form-group profile-full-width">
+    <label for="profileBio">About Me / Bio</label>
+        <textarea id="profileBio" rows="4" placeholder="Tell us a little about yourself..."></textarea>
+            </div>
+
+        </div>
+
+
+<div class="profile-form-actions">
+
+    <button type="submit" class="primary-button profile-save-button">
+        <i class="bi bi-check-circle"></i>Save Profile</button>
+
+    <button type="button" id="different-account-button" class="secondary-button different-account-button">
+
+        <i class="bi bi-person-plus"></i>Sign in with a different account </button>
+
+        </div>
+
+        <p id="profile-message" class="profile-feedback" role="status" aria-live="polite"></p>
+
+    </form>
+
+</section>
+
+
+
+
     <!--Side Navbar-->
     <aside class="sidenavbar">
 
