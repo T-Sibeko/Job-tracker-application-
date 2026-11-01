@@ -362,11 +362,11 @@ font-weight: bold;
 }
 
 body[data-theme="teal"] .resume-page p{
-    color: black;
+    color: var(--text);
 }
 
 body[data-theme="pink"] .resume-page p{
-    color: black;
+    color: var(--text);
 }
 
 body[data-theme="purple"] .resume-page p{
@@ -762,40 +762,46 @@ display: flex;
     background: rgba(255,255,255,0.13);
 }
 
+
+
 .sidenavbar.collapsed {
     width: 78px;
     min-width: 78px;
     padding: 28px 10px;
 }
 
+
 .sidenavbar.collapsed .Our-icon,
-.sidenavbar.collapsed .Navbar small,
-.sidenavbar.collapsed .nav-label {
-    display:flex;
+.sidenavbar.collapsed .Navbar small {
+    display: none;
 }
+
+
+.sidenavbar.collapsed .nav-label {
+    display: none;
+}
+
 
 .sidenavbar.collapsed .Navbar {
     align-items: center;
 }
 
-.sidenavbar.collapsed .sidebar-toggle 
-{
+.sidenavbar.collapsed .sidebar-toggle {
     align-self: center;
     justify-content: center;
     width: 100%;
 }
 
 
-.sidenavbar.collapsed .navbar-contents button 
-{
+.sidenavbar.collapsed .navbar-contents button {
     justify-content: center;
     padding: 14px 8px;
 }
 
-.sidenavbar.collapsed .nav-icon 
-{
+.sidenavbar.collapsed .nav-icon {
     margin: 0;
 }
+
 
 .jobs-image{
     margin-top: 30px;
