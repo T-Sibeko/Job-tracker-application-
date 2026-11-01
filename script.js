@@ -563,3 +563,167 @@ jobChart = new Chart(chartContext, {type: "bar",
     });
 
 })();
+
+
+/* Profile button*/
+
+const profileToggle = document.getElementById("profile-toggle");
+
+const profilePanel = document.getElementById("profile-panel");
+
+const profileClose = document.getElementById("profile-close");
+
+const profileForm = document.getElementById("profileForm");
+
+const savedProfileImage = document.getElementById("savedProfileImage");
+
+const profilePreview = document.getElementById("profile-preview");
+
+const profileImageInput = document.getElementById("profileImage");
+
+const profileMessage = document.getElementById("profile-message");
+
+const differentAccountButton = document.getElementById("different-account-button");
+
+
+/* Input fields */
+const profileFields = {
+
+    firstName: document.getElementById("profileFirstName"),
+    lastName: document.getElementById("profileLastName"),
+    email: document.getElementById("profileEmail"),
+    phone: document.getElementById("profilePhone"),
+    address: document.getElementById("profileAddress"),
+    bio: document.getElementById("profileBio")
+};
+
+
+/* Saved the profile */
+let profile = JSON.parse(
+    localStorage.getItem("profile") || "null"
+);
+
+
+/* Image memory */
+let profileImageData = profile?.profileImageData || "";
+
+
+/* Previously information */
+if (profile) {
+
+Object.keys(profileFields).forEach(function(field) { profileFields[field].value = profile[field] || "";
+
+    });
+
+if (profileImageData) { profilePreview.src = profileImageData;
+    savedProfileImage.textContent = "Previously saved profile picture.";} 
+    else { savedProfileImage.textContent = profile.profileImage && profile.profileImage !== "No Image"? "Previously selected: " + profile.profileImage : "";
+
+    }
+
+}
+
+
+
+profileToggle.addEventListener("click", function() { profilePanel.hidden = !profilePanel.hidden;
+
+    profileToggle.setAttribute( "aria-expanded",
+        String(!profilePanel.hidden)
+    );
+
+});
+
+
+profileClose.addEventListener("click", function() { profilePanel.hidden = true;
+profileToggle.setAttribute("aria-expanded", "false");
+
+});
+
+
+/* Profile picture */
+profileImageInput.addEventListener("change", function() {
+
+    const selectedFile = profileImageInput.files[0];
+
+    if (!selectedFile) return; 
+    if (!selectedFile.type.startsWith("image/")) { alert("Please select a valid image.");
+
+        profileImageInput.value = "";
+        return;
+
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        profileImageData = event.target.result;
+        profilePreview.src = profileImageData;
+        savedProfileImage.textContent = selectedFile.name;
+
+    };
+
+    reader.readAsDataURL(selectedFile);
+
+});
+
+
+/* Save the profile */
+profileForm.addEventListener("submit", function(event) { event.preventDefault();
+
+    const firstName = profileFields.firstName.value.trim();
+    const lastName = profileFields.lastName.value.trim();
+    const email = profileFields.email.value.trim();
+    const phone = profileFields.phone.value.trim();
+    const address = profileFields.address.value.trim();
+    const bio = profileFields.bio.value.trim();
+
+    if (!firstName || !email) {
+        alert("Please enter your first name and email address.");
+         return;
+    }
+
+    const savedProfile = {
+
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        address: address,
+        bio: bio,
+
+        profileImage: profileImageInput.files[0] ? profileImageInput.files[0].name : (profile?.profileImage || "No Image"), profileImageData: profileImageData
+
+    };
+
+
+    try {
+
+        localStorage.setItem( "profile",
+            JSON.stringify(savedProfile)
+        );
+
+        profile = savedProfile;
+
+        profileMessage.textContent =
+            "Your profile has been saved successfully.";
+
+        profileMessage.classList.add("visible");
+
+        savedProfileImage.textContent = profile.profileImage !== "No Image" ? "Saved picture: " + profile.profileImage : "No profile picture uploaded."; } catch (error) {
+
+        profileMessage.textContent =
+            "Unable to save your profile. Try using a smaller picture.";
+
+        profileMessage.classList.add("visible");
+
+    }
+
+});
+
+
+/* Sign in option button */
+differentAccountButton.addEventListener("click", 
+    function() {alert("Sign in with another account is not connected yet.");
+
+});
