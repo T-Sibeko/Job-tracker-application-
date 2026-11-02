@@ -645,12 +645,21 @@ display: flex;
 
 .primary-button {
     color: white;
-    background: #478C8B;
+    background: var(--primary);
 }
 
 .primary-button:hover {
-    background: #326B6A;
+    background: var(--primary-dark);
 }
+
+body[data-theme="purple"].profile-save-button{
+    color: #211A2D;
+}
+
+body[data-theme="purple"].profile-save-button:hover{
+    color: #211A2D;
+}
+
 
 .secondary-button {
     background: #D9EEEE;
@@ -1458,18 +1467,27 @@ display: flex;
 }
 
 .profile-save-button,
-.different-account-button {
+.different-account-button,
+.sign-out-button {
     width: 100%;
+    min-height: 46px;
     display: flex;
     justify-content: center;
     gap: 8px;
     align-items: center;
 }
 
-.different-account-button {
+.different-account-button,
+.sign-out-button{
     background: var(--accent);
     color: var(--text);
+    border: 1px solid var(--border);
 }
+
+.different-account-button:hover,
+.sign-out-button:hover{
+    background: var(--border);
+    color: var(--text);}
 
 .profile-feedback {
     border-radius: 8px;

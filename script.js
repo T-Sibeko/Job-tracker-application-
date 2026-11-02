@@ -727,3 +727,10 @@ differentAccountButton.addEventListener("click",
     function() {alert("Sign in with another account is not connected yet.");
 
 });
+
+const signOutButton = document.getElementById("sign-out-button")
+
+signOutButton.addEventListener("click",function(){
+    alert("Sign out option is not avaliable right now, please try again later")
+}
+)
