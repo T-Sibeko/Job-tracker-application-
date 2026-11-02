@@ -128,7 +128,7 @@ p {
 
 .sidenavbar {
     width: 250px;
-    padding: 28px 18px;
+    padding: 28px 18px 20px;
     background: var(--sidebar);
     color: var(--sidebar-text);
     min-width: 250px;
@@ -136,6 +136,8 @@ p {
     flex-direction: column;
     display: flex;
     height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .navbar-contents button:hover {
@@ -838,6 +840,7 @@ body[data-theme="purple"].profile-save-button:hover{
     height: auto;
     object-fit: contain;
     border-radius: 12px;
+    margin: 0 auto;
 }
 
 .sidenavbar.collapsed.sidebar-bottom-image{
