@@ -809,6 +809,28 @@ display: flex;
     width: 100%;
 }
 
+.sidebar-bottom-image{
+    margin-top: auto;
+    padding: 15px 5px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-bottom-image img{
+    display: block;
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.sidenavbar.collapsed.sidebar-bottom-image{
+    display: none;
+}
+
 .jobs-image img{
     margin: 0 auto;
     display: block;
