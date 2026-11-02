@@ -309,10 +309,13 @@ font-weight: bold;
 }
 
 .banner-logo img{
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
     object-fit: contain;
     display: block;
+    margin: auto;
+    max-width: 80px;
+    max-height: 80px;
 }
 
 .banner-logo:hover{
