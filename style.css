@@ -297,7 +297,7 @@ font-weight: bold;
 }
 
 .banner-logo{
-    width: 44px;
+    width: 100%;
     min-width: 48px;
     height: 44px;
     border-radius: 50%;
@@ -315,6 +315,8 @@ font-weight: bold;
     margin: auto;
     max-width: 10px;
     max-height: 5px;
+    margin: 20px auto;
+
 }
 
 .banner-logo:hover{
